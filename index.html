@@ -145,5 +145,42 @@ Cita-cita saya adalah mencapai financial freedom, agar bisa hidup dengan tenang,
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- GRID -->
+    <script>
+  const grid = document.getElementById('grid');
+
+  function setDirection(dir) {
+    grid.classList.remove('dir-right','dir-left','dir-up','dir-down');
+    grid.classList.add('dir-' + dir);
+  }
+
+  // keyboard: arrow keys change arah grid
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') setDirection('right');
+    if (e.key === 'ArrowLeft')  setDirection('left');
+    if (e.key === 'ArrowDown')  setDirection('down');
+    if (e.key === 'ArrowUp')    setDirection('up');
+  });
+
+  // optional API untuk mengubah variabel dari script lain:
+  window.GridBackground = {
+    setSpeed: (seconds) => document.documentElement.style.setProperty('--speed', seconds + 's'),
+    setGap: (px) => document.documentElement.style.setProperty('--gap', px + 'px'),
+    setThickness: (px) => document.documentElement.style.setProperty('--thickness', px + 'px'),
+    setDirection: setDirection
+  };
+
+  // contoh default (opsional)
+  // GridBackground.setSpeed(6);
+  // GridBackground.setGap(40);
+  // GridBackground.setThickness(1);
+</script>
+
   </body>
+  <!-- page base (di bawah grid) -->
+<div class="page-base" aria-hidden="true"></div>
+
+<!-- GRID BACKGROUND (z-index: -1) -->
+<div id="grid" class="grid-bg dir-right" aria-hidden="true"></div>
+
 </html>

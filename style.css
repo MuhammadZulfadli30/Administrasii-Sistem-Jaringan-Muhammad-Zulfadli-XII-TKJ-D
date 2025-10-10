@@ -195,3 +195,54 @@ footer hr {
   width: 700px;
   border-radius: 200px;
 }
+
+/* ===== IMG ganteng ===== */
+
+:root{
+  --gap: 40px;        /* jarak antar garis grid */
+  --thickness: 1px;   /* ketebalan garis */
+  --speed: 6s;        /* durasi animasi (lebih kecil = lebih cepat) */
+}
+
+/* base page (di bawah grid) supaya grid tetap terlihat ketika ingin background putih standar) */
+.page-base{
+  position:fixed;
+  inset:0;
+  background: #f8f9fa; /* agar tetap nyambung ke warna body default Anda */
+  z-index: -2; /* di bawah grid */
+  pointer-events:none;
+}
+
+/* elemen grid — z-index: -1 sesuai permintaan */
+.grid-bg{
+  position:fixed;
+  inset:0;
+  z-index:-1; /* <- sesuai permintaan */
+  pointer-events:none;
+  /* dua repeating gradients: vertikal + horizontal (garis hitam) */
+  background-image:
+    repeating-linear-gradient(90deg, black 0 calc(var(--thickness)), transparent calc(var(--thickness)) calc(var(--gap))),
+    repeating-linear-gradient(0deg, black 0 calc(var(--thickness)), transparent calc(var(--thickness)) calc(var(--gap)));
+  background-position: 0 0, 0 0;
+  background-repeat: repeat;
+  animation-duration: var(--speed);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* keyframes untuk 4 arah */
+@keyframes move-right { to { background-position: var(--gap) 0, var(--gap) 0; } }
+@keyframes move-left  { to { background-position: calc(-1 * var(--gap)) 0, calc(-1 * var(--gap)) 0; } }
+@keyframes move-down  { to { background-position: 0 var(--gap), 0 var(--gap); } }
+@keyframes move-up    { to { background-position: 0 calc(-1 * var(--gap)), 0 calc(-1 * var(--gap)); } }
+
+/* kelas arah */
+.dir-right { animation-name: move-right; }
+.dir-left  { animation-name: move-left; }
+.dir-down  { animation-name: move-down; }
+.dir-up    { animation-name: move-up; }
+
+/* responsive sedikit agar performa lebih baik di layar kecil */
+@media (max-width:520px){
+  :root{ --gap: 30px; --speed: 8s; }
+}
