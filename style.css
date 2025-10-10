@@ -1,9 +1,101 @@
-/* ===== BASE ===== */
+/* ===== GLOBAL ===== */
 body {
   font-family: 'Poppins', sans-serif;
   background: transparent;
   color: #ddd;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== MODERN NAVBAR STYLE ===== */
+.glassy-nav {
+  background: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+  transition: background 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  color: #ccc !important;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ff3333 !important;
+}
+
+/* Garis animasi di bawah link */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #ff3333;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Dropdown modern */
+.dropdown-menu {
+  border: none;
+  background: rgba(25, 25, 25, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  margin-top: 12px;
+  padding: 8px 0;
+  transition: 0.3s ease;
+}
+
+.dropdown-item {
+  color: #ccc;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 51, 51, 0.1);
+  color: #ff3333;
+}
+
+/* Navbar brand hover subtle */
+.navbar-brand:hover {
+  opacity: 0.9;
+}
+
+
+
+/* ===== VIDEO BACKGROUND ===== */
+#myVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+.video-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.55);
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* ===== NAVBAR ===== */
@@ -12,119 +104,46 @@ body {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  z-index: 9999;
 }
-
 .navbar-brand {
-  font-size: 1.4rem;
   color: #fff !important;
-  letter-spacing: 1px;
-  transition: 0.3s;
+  font-size: 1.4rem;
 }
-
-.navbar-brand:hover {
-  color: #ff4d4d !important;
-}
-
-.logo-icon {
-  color: #ff3333;
-  font-size: 28px;
-}
-
 .nav-link {
   color: #ddd !important;
   font-weight: 500;
   margin-left: 25px;
-  position: relative;
   transition: color 0.3s;
 }
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: #ff3333;
-  bottom: -4px;
-  left: 0;
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
 .nav-link:hover,
 .nav-link.active {
   color: #ff3333 !important;
 }
 
-
-/* ===== Dropdown Styling ===== */
-.dropdown-menu {
-  background: rgba(25, 25, 25, 0.95);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-  animation: fadeIn 0.2s ease;
-}
-
-.dropdown-item {
-  color: #ddd;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.dropdown-item:hover {
-  background: rgba(255, 0, 0, 0.2);
-  color: #fff;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-/* ===== HERO SECTION ===== */
+/* ===== HERO ===== */
 .hero {
   min-height: 100vh;
-  
+  position: relative;
+  z-index: 2;
   color: #eee;
   display: flex;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 120px;
 }
-
 .hero h1 {
   font-size: 3rem;
   font-weight: 700;
   color: #fff;
 }
-
 .hero h4 {
   color: #ff4d4d;
 }
-
 .hero p {
-  color: #bbb;
-  line-height: 1.8;
+  color: #ccc;
+  line-height: 1.7;
 }
-
-.hero .btn {
-  border-radius: 30px;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.hero .btn:hover {
+.btn-danger:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
 }
@@ -134,78 +153,65 @@ body {
   position: relative;
   display: inline-block;
   border-radius: 50%;
-  padding: 10px;
+  padding: 12px; /* ruang agar gradien terlihat */
   background: linear-gradient(135deg, #ff3333, #660000);
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
-  transition: all 0.4s ease;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+  overflow: hidden;
+  background: linear-gradient(135deg, #ff3333 20%, #8b0000 90%);
 }
-
-.photo-frame:hover {
-  box-shadow: 0 0 35px rgba(255, 0, 0, 0.8);
-  transform: scale(1.05);
-}
-
 .profile-photo {
-  width: 320px;
-  height: 320px;
-  object-fit: cover;
+  width: 400px; /* sedikit lebih kecil agar padding kelihatan */
+  height: 400px;
   border-radius: 50%;
-  border: 5px solid #111;
+  object-fit: cover;
+  display: block;
+  border: 4px solid #111; /* memberi pemisah halus dari gradasi */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+/* Efek hover biar makin hidup */
+.photo-frame:hover .profile-photo {
+  transform: scale(1.05);
+   box-shadow:
+    0 0 30px rgba(255, 0, 0, 0.5),
+    inset 0 0 20px rgba(255, 51, 51, 0.3);
 }
 
 /* ===== FOOTER ===== */
 .footer-modern {
   position: relative;
-  z-index: 2; /* pastikan di atas video */
+  z-index: 3;
   background: linear-gradient(135deg, #111, #1a0000);
   border-top: 2px solid #ff0000;
   color: #ddd;
+  padding: 60px 0 40px 0;
   font-size: 0.95rem;
-  padding-top: 60px;
-  padding-bottom: 40px;
 }
-
-/* input & textarea */
 .footer-modern input,
 .footer-modern textarea {
-  background: rgba(20, 20, 20, 0.9);
+  background: rgba(25, 25, 25, 0.9);
   color: #fff;
   border: 1px solid #444;
   border-radius: 8px;
   padding: 10px;
 }
-
 .footer-modern input:focus,
 .footer-modern textarea:focus {
   border-color: #ff3333;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
-
-/* tombol */
 .footer-modern .btn {
   background-color: #ff3333;
   border: none;
   transition: 0.3s;
-  font-weight: 600;
 }
-
 .footer-modern .btn:hover {
   background-color: #ff4d4d;
   transform: scale(1.05);
 }
-
-/* garis pemisah */
 .footer-modern hr {
   border-color: rgba(255, 255, 255, 0.15);
 }
-
-/* responsif */
-@media (max-width: 992px) {
-  .footer-modern {
-    text-align: center;
-  }
-}
-
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
@@ -218,28 +224,24 @@ body {
   }
 }
 
-
-
-/* ===== Navbar Dropdown Modern ===== */
-
-/* Hilangkan caret default Bootstrap */
-.navbar .dropdown-toggle::after {
-  display: none;
+/* ===== NAVBAR MINIMAL DROPDOWN ===== */
+.nav-item.dropdown .nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.small-icon {
-  font-size: 0.7rem;
-  transition: transform 0.3s ease;
+/* hilangkan panah bawaan Bootstrap */
+.nav-item.dropdown .nav-link::after {
+  display: none !important;
 }
 
-/* Rotasi ikon saat dropdown dibuka */
-.nav-item.dropdown.show .small-icon {
-  transform: rotate(180deg);
-}
-
-/* Animasi dropdown halus */
-.fade-down {
-  animation: fadeDown 0.25s ease;
+/* dropdown menu animasi fade turun */
+.dropdown-menu.fade-down {
+  animation: fadeDown 0.25s ease forwards;
+  transform-origin: top;
 }
 
 @keyframes fadeDown {
@@ -253,42 +255,28 @@ body {
   }
 }
 
-/* Style dropdown menu */
-.dropdown-menu {
-  background: rgba(30, 30, 30, 0.95);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-  padding: 8px 0;
-}
-
-.dropdown-item {
-  color: #ddd;
-  font-weight: 500;
+/* item di dropdown */
+.dropdown-menu-dark .dropdown-item {
+  color: #ccc;
   transition: all 0.3s ease;
 }
 
-.dropdown-item:hover {
-  background-color: rgba(255, 51, 51, 0.15);
-  color: #fff;
-  padding-left: 20px;
+.dropdown-menu-dark .dropdown-item:hover {
+  background: rgba(255, 51, 51, 0.1);
+  color: #ff3333;
+  padding-left: 18px;
 }
 
-
-
-
-/* Video background */
-#myVideo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: 0;           /* jangan -1 (jangan tertutup oleh body) */
-  pointer-events: none;
+/* ===== SOCIAL ICON COLORS ===== */
+.text-instagram {
+  color: #e1306c; /* pink khas IG */
+}
+.text-tiktok {
+  color: #69c9d0; /* biru khas TikTok */
 }
 
-
-
+/* saat hover item contact */
+.dropdown-menu-dark .dropdown-item:hover i {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}

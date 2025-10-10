@@ -6,6 +6,107 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+    (function(){
+    // Cari navbar (digunakan untuk mengukur tinggi)
+    const nav = document.querySelector('.glassy-nav') || document.querySelector('nav.navbar');
+
+    // utility: hitung posisi yang tepat untuk menu
+    function positionMenuUnderNavbar(toggleBtn, menu) {
+        const toggleRect = toggleBtn.getBoundingClientRect();
+        const navHeight = nav ? nav.getBoundingClientRect().height : 0;
+        // posisi kiri menu: sejajar dengan toggle (kiri)
+        const left = window.scrollX + toggleRect.left;
+        // posisi atas: tepat di bawah navbar (garansi tidak tertutup)
+        // jika toggle berada di navbar, rect.bottom <= navHeight, jadi kita paksa top = navHeight + pageYOffset
+        const top = window.scrollY + navHeight;
+        // set posisi
+        menu.style.left = left + 'px';
+        menu.style.top  = top  + 'px';
+        // jika ingin lebarnya sama dengan tombol: menu.style.minWidth = toggleRect.width + 'px';
+    }
+
+    // reposition saat scroll/resize jika menu masih terbuka
+    function addRepositionListeners(toggleBtn, menu, on) {
+        const handler = () => positionMenuUnderNavbar(toggleBtn, menu);
+        if (on) {
+        window.addEventListener('resize', handler);
+        window.addEventListener('scroll', handler, true);
+        menu._repositionHandler = handler;
+        } else {
+        window.removeEventListener('resize', menu._repositionHandler);
+        window.removeEventListener('scroll', menu._repositionHandler, true);
+        menu._repositionHandler = null;
+        }
+    }
+
+    // Temukan semua dropdown-toggle (Bootstrap / custom)
+    document.querySelectorAll('.dropdown-toggle').forEach(toggleBtn => {
+        const menu = toggleBtn.parentElement.querySelector('.dropdown-menu');
+        if (!menu) return;
+
+        // simpan flag kalau sudah dipindah
+        menu._wasMoved = false;
+
+        // event Bootstrap: show.bs.dropdown & hidden.bs.dropdown
+        toggleBtn.addEventListener('show.bs.dropdown', function () {
+        // pindahkan menu ke body supaya bebas dari overflow / stacking context
+        if (!menu._wasMoved) {
+            menu.classList.add('force-body');
+            document.body.appendChild(menu);
+            menu._wasMoved = true;
+        }
+        // posisikan tepat di bawah navbar & sejajar kiri toggle
+        positionMenuUnderNavbar(toggleBtn, menu);
+        addRepositionListeners(toggleBtn, menu, true);
+        });
+
+        toggleBtn.addEventListener('shown.bs.dropdown', function () {
+        // backup: kalau Popper/Bootstrap menambahkan inline style, pastikan posisi kita terpakai
+        positionMenuUnderNavbar(toggleBtn, menu);
+        });
+
+        toggleBtn.addEventListener('hidden.bs.dropdown', function () {
+        // kembalikan menu ke parent aslinya (toggleBtn.parentElement)
+        // untuk menjaga DOM tetap rapi, append ulang ke parent
+        // note: ini akan menghapus inline position/left/top
+        const parent = toggleBtn.parentElement;
+        if (menu._wasMoved) {
+            parent.appendChild(menu);
+            menu.classList.remove('force-body');
+            menu.style.left = '';
+            menu.style.top = '';
+            menu.style.position = '';
+            menu._wasMoved = false;
+        }
+        addRepositionListeners(toggleBtn, menu, false);
+        });
+
+        // fallback: jika tidak menggunakan Bootstrap events, coba handle click toggles manual
+        // (hanya aktif jika Bootstrap events tidak tersedia)
+        // We check presence of bootstrap's Dropdown by existence of show.bs.dropdown support,
+        // but we still add a manual toggle just-in-case.
+        if (typeof bootstrap === 'undefined' || !('Dropdown' in bootstrap)) {
+        // manual toggling (simplified)
+        toggleBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const isOpen = menu.classList.contains('show');
+            if (!isOpen) {
+            menu.classList.add('show', 'force-body');
+            document.body.appendChild(menu);
+            positionMenuUnderNavbar(toggleBtn, menu);
+            addRepositionListeners(toggleBtn, menu, true);
+            } else {
+            menu.classList.remove('show', 'force-body');
+            toggleBtn.parentElement.appendChild(menu);
+            menu.style.left = '';
+            menu.style.top = '';
+            addRepositionListeners(toggleBtn, menu, false);
+            }
+        });
+        }
+    });
+    })();
+    </script>
 </body>
 </html>
