@@ -3,151 +3,262 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muhammad Zulfadli</title>
+    <title>Muhammad Zulfadli | Portfolio</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <!-- FontAwesome -->
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f8b5a7db86.js" crossorigin="anonymous"></script>
 
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="asj.css" />
+    <link rel="stylesheet" href="perbandingan.css" />
   </head>
+
   <body>
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+
+    <!-- ===== VIDEO BACKGROUND ===== -->
+    <video id="myVideo" autoplay muted loop playsinline preload="auto" poster="particalred.jpg">
+         <source src="particalred.mp4" type="video/mp4" />
+    </video>
+
+
+
+
+            <!-- ===== NAVBAR ===== -->
+        <nav class="navbar navbar-expand-lg navbar-dark glassy-nav fixed-top">
+         <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+            <i class="fa-solid fa-briefcase" style="color: #ff3333; padding-right: 8px; font-size: 48px;"></i>  Portofolio.
+            </a>
+
+            <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            >
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <!-- Home -->
+                <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+                </li>
+
+                <!-- Projects Dropdown -->
+                <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle d-flex align-items-center"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                >
+                    Projects <i class="fas fa-chevron-down ms-1 small-icon"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark fade-down">
+                    <li><a class="dropdown-item" href="luxury.html">Pengantar Hosting</a></li>
+                    <li><a class="dropdown-item" href="pengantarhosting.html">Control Panel</a></li>
+                </ul>
+                </li>
+
+                <!-- Contact Dropdown -->
+                <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle d-flex align-items-center"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                >
+                    Contact <i class="fas fa-chevron-down ms-1 small-icon"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark fade-down">
+                    <li><a class="dropdown-item" href="https://www.instagram.com/zulfaadliii?igsh=M2FqY3c1bDl0OG9x&utm_source=qr"><i class="fab fa-instagram me-2 text-danger"></i>Instagram</a></li>
+                    <li><a class="dropdown-item" href="https://www.tiktok.com/@fearlesstosayyes?_t=ZS-90RAdm7ugra&_r=1" target="_blank"><i class="fab fa-tiktok me-2 text-success"></i>Tiktok</a></li>
+                </ul>
+                </li>
+            </ul>
+            </div>
+         </div>
+        </nav>
+
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero d-flex align-items-center">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#">
-          <img src="onepeace.jpeg" alt="logo" width="45" class="me-2" />
-          Handsome
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
-                Subject Matter
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="luxury.html">Pengantar Hosting</a></li>
-                <li><a class="dropdown-item" href="ElectricCar - Copy.html">Control Panel</a></li>
-              </ul>
-            </li>
-
-           
-          </ul>
-
-          <div class="d-flex ms-3">
-            <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <!-- ===== HEADER ===== -->
-    <header class="bg-light py-5">
-      <div class="container text-center text-lg-start">
-        <div class="row align-items-center">
-          <div class="col-lg-6 mb-4 mb-lg-0">
-            <h1 class="fw-bold display-5">Muhammad Zulfadli</h1>
-            <h3 class="text-secondary mb-3">A.K.A Zul Ganteng!</h3>
-            <p class="mb-4">
-              Saya berumur 17 tahun dan memiliki hobi bermain billiard. Bagi saya, bermain billiard bukan hanya sekadar permainan, tetapi juga cara untuk mengurangi rasa kesepian dan menenangkan pikiran. Dari permainan itu, saya belajar fokus, strategi, dan ketenangan dalam mengambil keputusan.
-Cita-cita saya adalah mencapai financial freedom, agar bisa hidup dengan tenang, mandiri, dan bebas menentukan jalan hidup tanpa bergantung pada siapa pun.
+        <div class="row align-items-center text-center text-lg-start">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h1 class="fw-bold mb-3">Muhammad Zulfadli</h1>
+            <h4 class="text-danger mb-4">A.K.A. Zul Ganteng 😎</h4>
+            <p class="lead text-secondary mb-4">
+              Saya berumur 17 tahun dan memiliki hobi bermain billiard. Bagi saya, bermain billiard bukan hanya sekadar permainan, tetapi juga cara untuk mengurangi rasa kesepian dan menenangkan pikiran.  
+              Cita-cita saya adalah mencapai <strong>financial freedom</strong>, agar bisa hidup tenang dan mandiri.
             </p>
-            <a href="loginpage.html" class="btn btn-dark btn-lg">Follow Me!</a>
+            <a href="https://www.instagram.com/zulfaadliii?igsh=M2FqY3c1bDl0OG9x&utm_source=qr" class="btn btn-danger btn-lg px-4">
+              <i class="fas fa-user-plus me-2"></i> Follow Me
+            </a>
           </div>
 
-          <div class="col-lg-6 text-center">
-            <img
-              src="ganteng.jpg"
-              alt="Car"
-              class="img-fluid"
-            />
+          <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="fade-left">
+            <div class="photo-frame mx-auto">
+              <img src="ganteng.jpg" alt="Zulfadli" class="img-fluid rounded-circle profile-photo" />
+            </div>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-
-<!-- ===== Footer Part ===== -->
-
-    <footer class="bg-dark text-light pt-5 pb-3">
-  <div class="container">
-    <div class="row gy-4 align-items-start text-center text-md-start">
-      <!-- KOLOM 1 -->
-      <div class="col-md-4 footer-col">
-        <i class="fas fa-location-dot text-danger mb-3" style="font-size: 60px;"></i>
-        <p class="footer-text">
-          Rumah saya bertepatan di <strong>Sudirman Park</strong>, tidak jauh dari stasiun Karet — sekitar 500 meter dari sana.  
-          Kalau kangen, boleh sering-sering buka website saya 😎.
-        </p>
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-modern text-light pt-5 pb-3">
+      <div class="container">
+        <div class="row gy-4 text-center text-md-start">
+          <div class="col-md-4">
+            <i class="fas fa-location-dot text-danger mb-3" style="font-size: 50px;"></i>
+            <p>
+              Rumah saya bertepatan di <strong>Sudirman Park</strong>, tidak jauh dari Stasiun Karet — sekitar 500 meter dari sana.  
+              Kalau kangen, boleh sering-sering buka website saya 😎.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="text-danger">Asal Sekolah</h5>
+            <p>SMK 3 Perguruan Cikini</p>
+            <p>Srengseng Sawah, Jakarta Selatan</p>
+            <p>XII TKJ D</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="text-danger">Name and Message</h5>
+            <form>
+              <input type="text" class="form-control mb-3" placeholder="Your name..." />
+              <textarea class="form-control mb-3" rows="2" placeholder="Message for me..."></textarea>
+              <button class="btn btn-danger w-100">
+                <i class="fas fa-paper-plane me-2"></i> Submit
+              </button>
+            </form>
+          </div>
+        </div>
+        <hr class="border-light my-4" />
+        <p class="text-center mb-0">&copy; 2025 <strong>ZUL Ganteng</strong> — All Rights Reserved.</p>
       </div>
+    </footer>
 
-      <!-- KOLOM 2 -->
-      <div class="col-md-4 footer-col">
-        <h5 class="footer-title">Asal Sekolah</h5>
-        <p class="footer-text">SMK 3 Perguruan Cikini</p>
-        <p class="footer-text">Srengseng Sawah, Jakarta Selatan</p>
-        <p class="footer-text">XII TKJ D</p>
-      </div>
-
-      <!-- KOLOM 3 -->
-      <div class="col-md-4 footer-col">
-        <h5 class="footer-title">Kesan & Pesan</h5>
-        <form class="footer-form mt-2">
-          <input
-            type="text"
-            class="form-control mb-3"
-            placeholder="Nama kamu..."
-            required
-          />
-          <input
-            type="text"
-            class="form-control mb-3"
-            placeholder="Tulis pesanmu di sini..."
-            required
-          />
-          <button class="btn btn-danger w-100" type="submit">
-            <i class="fas fa-paper-plane me-2"></i> Kirim
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <hr class="border-light my-4" />
-    <p class="text-center mb-0">
-      &copy; 2025 <strong>ZUL Ganteng</strong>. Semua hak dilindungi.
-    </p>
-  </div>
-</footer>
-
-<!-- ===== NFooter PartAVBAR ===== -->
-
-    <!-- Bootstrap JS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+   
+
+
+    <script>
+    (function(){
+    // Cari navbar (digunakan untuk mengukur tinggi)
+    const nav = document.querySelector('.glassy-nav') || document.querySelector('nav.navbar');
+
+    // utility: hitung posisi yang tepat untuk menu
+    function positionMenuUnderNavbar(toggleBtn, menu) {
+        const toggleRect = toggleBtn.getBoundingClientRect();
+        const navHeight = nav ? nav.getBoundingClientRect().height : 0;
+        // posisi kiri menu: sejajar dengan toggle (kiri)
+        const left = window.scrollX + toggleRect.left;
+        // posisi atas: tepat di bawah navbar (garansi tidak tertutup)
+        // jika toggle berada di navbar, rect.bottom <= navHeight, jadi kita paksa top = navHeight + pageYOffset
+        const top = window.scrollY + navHeight;
+        // set posisi
+        menu.style.left = left + 'px';
+        menu.style.top  = top  + 'px';
+        // jika ingin lebarnya sama dengan tombol: menu.style.minWidth = toggleRect.width + 'px';
+    }
+
+    // reposition saat scroll/resize jika menu masih terbuka
+    function addRepositionListeners(toggleBtn, menu, on) {
+        const handler = () => positionMenuUnderNavbar(toggleBtn, menu);
+        if (on) {
+        window.addEventListener('resize', handler);
+        window.addEventListener('scroll', handler, true);
+        menu._repositionHandler = handler;
+        } else {
+        window.removeEventListener('resize', menu._repositionHandler);
+        window.removeEventListener('scroll', menu._repositionHandler, true);
+        menu._repositionHandler = null;
+        }
+    }
+
+    // Temukan semua dropdown-toggle (Bootstrap / custom)
+    document.querySelectorAll('.dropdown-toggle').forEach(toggleBtn => {
+        const menu = toggleBtn.parentElement.querySelector('.dropdown-menu');
+        if (!menu) return;
+
+        // simpan flag kalau sudah dipindah
+        menu._wasMoved = false;
+
+        // event Bootstrap: show.bs.dropdown & hidden.bs.dropdown
+        toggleBtn.addEventListener('show.bs.dropdown', function () {
+        // pindahkan menu ke body supaya bebas dari overflow / stacking context
+        if (!menu._wasMoved) {
+            menu.classList.add('force-body');
+            document.body.appendChild(menu);
+            menu._wasMoved = true;
+        }
+        // posisikan tepat di bawah navbar & sejajar kiri toggle
+        positionMenuUnderNavbar(toggleBtn, menu);
+        addRepositionListeners(toggleBtn, menu, true);
+        });
+
+        toggleBtn.addEventListener('shown.bs.dropdown', function () {
+        // backup: kalau Popper/Bootstrap menambahkan inline style, pastikan posisi kita terpakai
+        positionMenuUnderNavbar(toggleBtn, menu);
+        });
+
+        toggleBtn.addEventListener('hidden.bs.dropdown', function () {
+        // kembalikan menu ke parent aslinya (toggleBtn.parentElement)
+        // untuk menjaga DOM tetap rapi, append ulang ke parent
+        // note: ini akan menghapus inline position/left/top
+        const parent = toggleBtn.parentElement;
+        if (menu._wasMoved) {
+            parent.appendChild(menu);
+            menu.classList.remove('force-body');
+            menu.style.left = '';
+            menu.style.top = '';
+            menu.style.position = '';
+            menu._wasMoved = false;
+        }
+        addRepositionListeners(toggleBtn, menu, false);
+        });
+
+        // fallback: jika tidak menggunakan Bootstrap events, coba handle click toggles manual
+        // (hanya aktif jika Bootstrap events tidak tersedia)
+        // We check presence of bootstrap's Dropdown by existence of show.bs.dropdown support,
+        // but we still add a manual toggle just-in-case.
+        if (typeof bootstrap === 'undefined' || !('Dropdown' in bootstrap)) {
+        // manual toggling (simplified)
+        toggleBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const isOpen = menu.classList.contains('show');
+            if (!isOpen) {
+            menu.classList.add('show', 'force-body');
+            document.body.appendChild(menu);
+            positionMenuUnderNavbar(toggleBtn, menu);
+            addRepositionListeners(toggleBtn, menu, true);
+            } else {
+            menu.classList.remove('show', 'force-body');
+            toggleBtn.parentElement.appendChild(menu);
+            menu.style.left = '';
+            menu.style.top = '';
+            addRepositionListeners(toggleBtn, menu, false);
+            }
+        });
+        }
+    });
+    })();
+    </script>   
   </body>
 </html>
