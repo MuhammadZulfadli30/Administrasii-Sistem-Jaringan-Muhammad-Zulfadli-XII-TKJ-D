@@ -257,7 +257,6 @@ body {
 
 /* item di dropdown */
 .dropdown-menu-dark .dropdown-item {
-  color: #ccc;
   transition: all 0.3s ease;
 }
 
