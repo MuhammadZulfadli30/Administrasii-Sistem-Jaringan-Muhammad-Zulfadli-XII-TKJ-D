@@ -2,7 +2,6 @@
 body {
   font-family: 'Poppins', sans-serif;
   background: transparent;
-  color: #ddd;
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
@@ -79,24 +78,6 @@ body {
 
 
 
-/* ===== VIDEO BACKGROUND ===== */
-#myVideo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: 0;
-  pointer-events: none;
-}
-.video-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(10, 10, 10, 0.55);
-  z-index: 1;
-  pointer-events: none;
-}
 
 /* ===== NAVBAR ===== */
 .glassy-nav {
@@ -279,3 +260,15 @@ body {
   transform: scale(1.2);
   transition: transform 0.2s ease;
 }
+
+
+#bubbleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at bottom, #1a0000 0%, #000 80%);
+}
+
