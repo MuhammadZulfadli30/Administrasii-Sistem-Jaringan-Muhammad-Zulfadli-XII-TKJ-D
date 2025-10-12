@@ -64,17 +64,18 @@
 /* Hosting cards grid */
 .hosting-cards { margin-top: 8px; }
 
-/* Individual hosting card */
+/* Individual hosting card - centered paragraphs */
 .hosting-card {
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border-radius: 12px;
-  padding: 16px;
-  min-height: 120px;
+  padding: 18px 14px;
+  min-height: 140px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: space-between;
+  gap: 10px;
+  align-items: center;            /* CENTER horizontal alignment */
+  text-align: center;             /* CENTER paragraph text */
+  justify-content: flex-start;
   border: 1px solid rgba(255,255,255,0.03);
   transition: transform .22s ease, box-shadow .22s ease;
 }
@@ -83,21 +84,21 @@
   box-shadow: 0 10px 40px rgba(0,0,0,0.45);
 }
 
-/* Icon circle */
+/* Icon circle centered */
 .icon-wrap {
   display: inline-grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
   background: linear-gradient(135deg, rgba(255,74,42,0.12), rgba(255,126,98,0.06));
   color: #ff7a55;
-  font-size: 18px;
-  margin-bottom: 4px;
+  font-size: 20px;
+  margin: 0 auto 8px auto;      /* center the icon */
 }
 
-/* Text inside cards */
-.hosting-card h5 { margin: 0; font-size: 1rem; font-weight: 600; color: #fff; }
+/* Text inside cards (centered) */
+.hosting-card h5 { margin: 0; font-size: 1rem; font-weight: 600; color: #fff; text-align: center; }
 .hosting-card .desc { color: var(--muted); margin: 0; }
 .hosting-card .meta { color: rgba(255,255,255,0.55); margin-top: 6px; }
 
@@ -118,18 +119,18 @@
 /* Responsive adjustments */
 @media (max-width: 992px) {
   :root{ --card-padding: 16px; }
-  .icon-wrap { width: 40px; height: 40px; font-size: 16px; }
-  .hosting-card { min-height: 110px; padding: 14px; }
+  .icon-wrap { width: 48px; height: 48px; font-size: 18px; }
+  .hosting-card { min-height: 120px; padding: 14px; }
 }
 
 @media (max-width: 576px) {
   :root{ --section-padding: 20px; --card-padding: 12px; }
   .hero-section { padding-top: 68px; padding-bottom: 20px; }
   .brand-text { font-size: 0.98rem; }
-  .hosting-card { min-height: auto; gap: 6px; padding: 12px; }
+  .hosting-card { min-height: auto; gap: 8px; padding: 12px; }
 }
 
-/* === Big & aesthetic GitHub–Vercel section (full landscape fill) === */
+/* Big & aesthetic GitHub–Vercel section (full landscape fill) */
 .big-platform { padding: 28px 24px; }
 
 .platform-showcase {
