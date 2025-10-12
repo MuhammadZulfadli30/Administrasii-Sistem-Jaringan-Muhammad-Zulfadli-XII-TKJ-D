@@ -46,6 +46,15 @@ body {
   color: #ff3333;
 }
 
+/* === Hapus caret / petunjuk panah di dropdown toggle ===
+   Aturan ini menyembunyikan pseudo-element ::after yang
+   Bootstrap tambahkan untuk menampilkan panah kecil. === */
+.dropdown-toggle::after,
+.nav-link.dropdown-toggle::after {
+  display: none !important;
+  content: none !important;
+}
+
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
@@ -124,4 +133,68 @@ body {
   width: 100%;
   height: 100%;
   background: radial-gradient(circle at bottom, #1a0000 0%, #000 80%);
+}
+
+/* === Aesthetic platform cards === */
+.platform-card {
+  background: linear-gradient(145deg, rgba(40,40,40,0.7), rgba(15,15,15,0.6));
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s ease, box-shadow .25s ease;
+  height: 100%;
+}
+.platform-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 25px rgba(255,90,50,0.25);
+}
+
+.platform-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  max-height: 180px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.platform-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform .4s ease;
+  filter: brightness(0.9) contrast(1.05);
+}
+.platform-card:hover .platform-image img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+.platform-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+.platform-body h4 {
+  font-weight: 600;
+}
+.platform-body p {
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+}
+.shadow-glow {
+  box-shadow: 0 0 18px rgba(255,100,70,0.06);
+}
+
+/* Adjust row spacing */
+.row.g-3 { row-gap: 1rem !important; }
+
+/* Responsive stacking */
+@media (max-width: 768px) {
+  .platform-image img { height: 160px; }
+}
+@media (max-width: 576px) {
+  .platform-body { padding: 12px 14px; }
 }
