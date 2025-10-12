@@ -30,7 +30,7 @@
       <div class="container">
         <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
           <i class="fa-solid fa-briefcase" style="color: #ff3333; font-size: 36px; margin-right: 10px;"></i>
-          Portofolio.
+          Profile.
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -225,7 +225,7 @@ animateBubbles();
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
         // tampilkan tombol kirim, hilangkan tombol loading
-        btnLoading.classList.toggle('d-none');
+        btnLoading.classList.toggle('d-none');   
         btnKirim.classList.toggle('d-none');
         // tampilkan alert
         myAlert.classList.toggle('d-none');

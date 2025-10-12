@@ -1,0 +1,127 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* ===== NAVBAR (sama seperti index.css) ===== */
+.glassy-nav {
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+.navbar-brand {
+  color: #fff !important;
+  font-size: 1.4rem;
+}
+.nav-link {
+  color: #ddd !important;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #ff3333 !important;
+}
+.dropdown-menu {
+  border: none;
+  background: rgba(25, 25, 25, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  margin-top: 12px;
+  padding: 8px 0;
+  transition: 0.3s ease;
+}
+.dropdown-item {
+  color: #ccc;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.dropdown-item:hover {
+  background: rgba(255, 51, 51, 0.1);
+  color: #ff3333;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+.hero h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+.hero p {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+/* ===== SECTION DARK ===== */
+.section-dark {
+  background: rgba(20, 0, 0, 0.8);
+  z-index: 2;
+  position: relative;
+}
+
+/* ===== MATERIAL SECTION (jarak atas bawah) ===== */
+.material-section {
+  padding: 60px 0; /* jarak atas bawah untuk tiap materi */
+}
+
+.material-section h2,
+.material-section h3 {
+  margin-bottom: 20px;
+}
+
+.material-section p,
+.material-section ul {
+  line-height: 1.8;
+}
+
+/* ===== CARD ===== */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+}
+
+/* ===== FOOTER ===== */
+.footer-modern {
+  background: linear-gradient(135deg, #100000, #1a0000);
+  border-top: 2px solid #ff0000;
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== INSTAGRAM & TIKTOK COLORS ===== */
+.text-instagram {
+  color: #e1306c;
+}
+.text-tiktok {
+  color: #69c9d0;
+}
+
+/* ===== CANVAS ===== */
+#bubbleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at bottom, #1a0000 0%, #000 80%);
+}

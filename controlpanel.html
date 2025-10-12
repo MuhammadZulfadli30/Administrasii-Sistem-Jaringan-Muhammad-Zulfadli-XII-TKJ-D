@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control Panel | Muhammad Zulfadli</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/f8b5a7db86.js" crossorigin="anonymous"></script>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="controlpanel.css" />
+</head>
+
+<body>
+  <canvas id="bubbleCanvas"></canvas>
+
+  <!-- ===== NAVBAR (sama seperti index.html) ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark glassy-nav fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+        <i class="fa-solid fa-briefcase" style="color: #ff3333; font-size: 36px; margin-right: 10px;"></i>
+        Profile.
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+              Projects
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark fade-down">
+              <li><a class="dropdown-item" href="index.html">Pengantar Hosting</a></li>
+              <li><a class="dropdown-item active" href="controlpanel.html">Control Panel</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Contact
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark fade-down">
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="https://www.instagram.com/zulfaadliii" target="_blank">
+                  <i class="fab fa-instagram me-2 text-instagram"></i>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="https://www.tiktok.com/@fearlesstosayyes" target="_blank">
+                  <i class="fab fa-tiktok me-2 text-tiktok"></i>
+                  TikTok
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero d-flex align-items-center text-center">
+    <div class="container" data-aos="fade-up">
+      <h1 class="fw-bold mb-3 text-white">Apa Itu Control Panel?</h1>
+      <p class="lead text-secondary mx-auto" style="max-width:900px;">
+        Control Panel adalah antarmuka grafis yang membantu pengguna mengelola server atau layanan hosting tanpa perlu mengetik perintah di terminal. Lewat control panel, kita dapat mengatur domain, file, database, email, backup, dan fitur lainnya secara lebih mudah.
+      </p>
+      <a href="#materi-controlpanel" class="btn btn-danger mt-3 px-4">Pelajari Materi</a>
+    </div>
+  </section>
+
+  <!-- ===== KONTEN MATERI ===== -->
+  <section id="materi-controlpanel" class="py-5 text-light section-dark">
+    <div class="container" data-aos="fade-up">
+
+      <!-- Pengertian -->
+      <div class="material-section text-center mb-5">
+        <h2 class="fw-bold text-danger">Pengertian Control Panel</h2>
+        <p class="text-secondary mx-auto" style="max-width:900px;">
+          Control Panel (panel kontrol) adalah sebuah alat berbasis web yang memberi antarmuka grafis untuk mengelola layanan hosting atau server. Dengan control panel, tugas administrasi seperti membuat akun email, mengelola file, memasang SSL, atau membuat database menjadi lebih cepat dan ramah pengguna.
+        </p>
+      </div>
+
+      <!-- Analogi -->
+      <div class="material-section mb-5">
+        <h3 class="text-danger fw-semibold">Analogi Gampang</h3>
+        <p class="text-secondary">
+          Bayangkan control panel seperti dashboard mobil. Dashboard menunjukkan indikator (bensin, kecepatan) dan memiliki tombol-tombol untuk menyalakan AC, lampu, atau memutar musik. Pengguna tidak perlu membuka mesin untuk mengatur fitur-fitur itu—cukup pakai tombol dan indikator yang mudah dimengerti.
+        </p>
+      </div>
+
+      <!-- Jenis-Jenis -->
+      <div class="material-section mb-5">
+        <h3 class="text-danger fw-semibold mb-3">Jenis-Jenis Control Panel</h3>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 bg-dark text-light shadow-lg border-danger border-opacity-50">
+              <div class="card-body">
+                <i class="fa-solid fa-server mb-3 text-danger fs-2"></i>
+                <h5 class="card-title text-danger">cPanel</h5>
+                <p class="card-text">Salah satu control panel paling populer untuk hosting Linux. Ramah pengguna, banyak tutorial, dan didukung oleh banyak penyedia hosting.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 bg-dark text-light shadow-lg border-danger border-opacity-50">
+              <div class="card-body">
+                <i class="fa-solid fa-cloud mb-3 text-danger fs-2"></i>
+                <h5 class="card-title text-danger">Plesk</h5>
+                <p class="card-text">Sering dipakai di lingkungan Windows dan Linux, Plesk menawarkan antarmuka modern dan dukungan untuk aplikasi web.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 bg-dark text-light shadow-lg border-danger border-opacity-50">
+              <div class="card-body">
+                <i class="fa-solid fa-code mb-3 text-danger fs-2"></i>
+                <h5 class="card-title text-danger">DirectAdmin &amp; Webmin</h5>
+                <p class="card-text">DirectAdmin ringan dan cepat, sedangkan Webmin gratis dan lebih teknis—cocok untuk admin yang ingin kontrol lebih mendalam.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GALLERY / CONTOH GAMBAR CONTROL PANEL -->
+      <div class="material-section mb-5">
+        <h3 class="text-danger fw-semibold mb-3">Contoh Tampilan Control Panel</h3>
+        <p class="text-secondary">Berikut dua contoh tampilan control panel (menggunakan URL langsung dari Unsplash). Klik gambar untuk memperbesar di tab baru.</p>
+
+        <div class="row gy-4 justify-content-center align-items-stretch gallery-grid">
+          <div class="col-12 col-md-6">
+            <figure class="img-card text-center">
+                <img src="manage.png" alt="Contoh dashboard 1" class="img-fluid rounded shadow-sm" style="height:320px; width:100%; object-fit:cover;" />
+              <figcaption class="mt-2 text-secondary small">Contoh dashboard: tampilan resmi dengan sidebar dan area tools (ikon & kategori).</figcaption>
+            </figure>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <figure class="img-card text-center">
+                <img src="controlpanel.jpg" alt="Contoh dashboard 2" class="img-fluid rounded shadow-sm" style="height:320px; width:100%; object-fit:cover;" />
+              <figcaption class="mt-2 text-secondary small">Contoh dashboard: melihat statistik dan performa website</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <p class="text-secondary mt-3 small">Gambar ini menampilkan dashboard cPanel yang dirancang untuk mempermudah pengelolaan situs web, sehingga memungkinkan pengaturan yang lebih fleksibel dan peningkatan efisiensi operasional. </p>
+      </div>
+
+      <!-- Fungsi Utama -->
+      <div class="material-section mb-5">
+        <h3 class="text-danger fw-semibold mb-3">Fungsi Utama Control Panel</h3>
+        <ul class="text-secondary">
+          <li>Mengelola file (upload, file manager)</li>
+          <li>Membuat dan mengelola database (MySQL, PostgreSQL)</li>
+          <li>Mengatur akun email dan forwarder</li>
+          <li>Menambahkan domain, subdomain, dan DNS</li>
+          <li>Backup &amp; restore data</li>
+          <li>Instalasi aplikasi (WordPress, Joomla) lewat auto-installer</li>
+          <li>Mengelola sertifikat SSL dan keamanan</li>
+          <li>Monitoring resource &amp; statistik pengunjung</li>
+        </ul>
+      </div>
+
+      <!-- Tips Memilih -->
+      <div class="material-section mb-5">
+        <h3 class="text-danger fw-semibold mb-3">Tips Memilih Control Panel</h3>
+        <p class="text-secondary">
+          Pilih control panel berdasarkan kebutuhan: kalau baru belajar dan pakai shared hosting, pilih yang populer seperti cPanel karena banyak panduan. Untuk server dengan resource terbatas, pertimbangkan panel ringan (DirectAdmin). Perhatikan juga lisensi, keamanan, dan dukungan provider.
+        </p>
+      </div>
+
+      <!-- Kesimpulan -->
+      <div class="material-section mb-5 text-center">
+        <h3 class="text-danger fw-semibold">Kesimpulan</h3>
+        <p class="text-secondary mx-auto" style="max-width:900px;">
+          Control panel membuat administrasi server/hosting menjadi lebih mudah, terutama untuk pengguna non-teknis. Mengetahui fungsi dasar dan perbedaan panel populer akan membantu kamu memilih yang paling sesuai.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer-modern text-center text-light">
+    <div class="container">
+      <p>&copy; 2025 <strong>Zulfadli Ganteng</strong> — Semua Hak Dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+  <!-- ===== ANIMASI BOLA ===== -->
+  <script>
+    const canvas = document.getElementById("bubbleCanvas");
+    const ctx = canvas.getContext("2d");
+    let bubbles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    function createBubble() {
+      const fromLeft = Math.random() < 0.5;
+      const x = fromLeft
+        ? Math.random() * (canvas.width * 0.25)
+        : canvas.width - Math.random() * (canvas.width * 0.25);
+      const y = canvas.height + Math.random() * 100;
+      const radius = Math.random() * 25 + 10;
+      const speed = Math.random() * 1.5 + 0.5;
+      const opacity = Math.random() * 0.4 + 0.3;
+      const hue = 15 + Math.random() * 30;
+      bubbles.push({ x, y, radius, speed, opacity, hue });
+    }
+
+    function animateBubbles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (Math.random() < 0.2 && bubbles.length < 80) createBubble();
+
+      bubbles.forEach((b, i) => {
+        b.y -= b.speed;
+        b.x += Math.sin(b.y / 25) * 0.7;
+        ctx.beginPath();
+        const gradient = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.radius);
+        gradient.addColorStop(0, `hsla(${b.hue},100%,60%,${b.opacity})`);
+        gradient.addColorStop(1, `hsla(${b.hue},100%,60%,0)`);
+        ctx.fillStyle = gradient;
+        ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        if (b.y + b.radius < 0) bubbles.splice(i, 1);
+      });
+      requestAnimationFrame(animateBubbles);
+    }
+
+    animateBubbles();
+  </script>
+</body>
+</html>
