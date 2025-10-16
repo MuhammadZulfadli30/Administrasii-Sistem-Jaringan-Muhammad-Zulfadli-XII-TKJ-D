@@ -59,7 +59,7 @@
 
 /* Navbar brand logo + text */
 .brand-logo { display: inline-block; vertical-align: middle; }
-.brand-text { font-size: 1.05rem; letter-spacing: .2px; color: #fff; }
+.brand-text { font-size: 1.40rem; letter-spacing: .2px; color: #fff; }
 
 /* Hosting cards grid */
 .hosting-cards { margin-top: 8px; }
